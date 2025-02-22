@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Dockbar from "@/components/Dockbar";
 
 const prompt = Prompt({
   variable: "--font-prompt",
@@ -28,6 +29,8 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+
+        <Dockbar />
       </body>
     </html>
   );
