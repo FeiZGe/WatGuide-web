@@ -18,7 +18,7 @@ const Menulink = ({ path = "#", icon, bg }: menuProps) => {
             bg ? bg : "bg-slate-100 hover:bg-slate-300/50 bg-opacity-10 backdrop-blur-sm text-slate-700"
         )}
     >
-        <FontAwesomeIcon icon={icon} className="w-6 h-6" />
+        <FontAwesomeIcon icon={icon} className="w-5 h-5" />
     </Link>
   )
 }
