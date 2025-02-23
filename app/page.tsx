@@ -37,9 +37,9 @@ export default function Home() {
 
         {/* Gallery Part */}
         <div className="grid grid-cols-2 grid-rows-2 gap-3 md:h-52 h-72">
-          <HomeGallery css="md:row-span-2 md:col-span-1 col-span-2" />
-          <HomeGallery />
-          <HomeGallery text="ดูรูปภาพเพิ่มเติม" />
+          <HomeGallery img="/image/gallery/1.jpg" css="md:row-span-2 md:col-span-1 col-span-2" />
+          <HomeGallery img="/image/gallery/2.jpg" />
+          <HomeGallery img="/image/gallery/3.jpg" text="40+ รูปภาพ" />
         </div>
         
       </section>
