@@ -56,7 +56,7 @@ const Destiny = () => {
             {selectedCard && (
                 <>
                     <h2 className="text-slate-200 text-3xl text-center mb-4">เซียมซีใบที่ {selectedCard.id}</h2>
-                    <p className="text-slate-300 px-6 mx-auto max-w-lg text-pretty">{selectedCard.description}</p>
+                    <p className="text-slate-300 px-6 mx-auto max-w-lg text-pretty indent-8">{selectedCard.description}</p>
                 </>
             )}
           </ModalDestiny>

@@ -45,7 +45,7 @@ const ModalDestiny = ({ open, setOpen, children }: ModalDestinyProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={handleClose}
-            className="fixed inset-0 z-50 bg-neutral-950/70"
+            className="fixed inset-0 z-50 bg-neutral-900/70 bg-opacity-30 backdrop-blur-md"
           >
             <motion.div
               id="drawer"
@@ -53,7 +53,7 @@ const ModalDestiny = ({ open, setOpen, children }: ModalDestinyProps) => {
               onClick={(e) => e.stopPropagation()}
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ ease: "easeInOut" }}
+              transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
               className="absolute bottom-0 h-[75vh] w-full overflow-hidden rounded-t-3xl bg-neutral-900"
               style={{ y }}
               drag="y"
