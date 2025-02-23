@@ -32,8 +32,9 @@ export default function Home() {
 
       {/* Section เนื้อหา */}
       <section className="px-4 max-w-xl mx-auto">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-pretty">วัดพระปฐมเจดีย์ราชวรมหาวิหาร</h1>
-        <p className="text-sm opacity-70 text-pretty mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, molestias.</p>
+        <h1 className="text-4xl md:text-6xl font-bold text-pretty">วัดพระปฐมเจดีย์<br></br>ราชวรมหาวิหาร</h1>
+        <p className="text-xs opacity-40 text-pretty mb-1">ต.พระปฐมเจดีย์ อ.เมืองนครปฐม จ.นครปฐม</p>
+        <p className="text-sm opacity-70 text-pretty mb-5 indent-8">เมื่อเอ่ยถึงนครปฐม หลายคนคงนึกถึง <b>วัดพระปฐมเจดีย์ราชวรมหาวิหาร</b> ซึ่งเป็นที่ประดิษฐานของพระเจดีย์ที่ใหญ่ที่สุดในประเทศไทย แต่สิ่งที่ทำให้ที่นี่น่าหลงใหลไม่ได้มีเพียงแค่สถาปัตยกรรมทางศาสนาเท่านั้น บรรยากาศรอบๆ วัดยังเต็มไปด้วยเสน่ห์ของวัฒนธรรม ประวัติศาสตร์ และวิถีชีวิตอันมีเอกลักษณ์ที่รอให้คุณมาสัมผัส</p>
 
         {/* Gallery Part */}
         <div className="grid grid-cols-2 grid-rows-2 gap-3 md:h-52 h-72">
