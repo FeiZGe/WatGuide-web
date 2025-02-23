@@ -1,20 +1,21 @@
 "use client";
+import ModalDestiny from "@/components/ModalDestiny";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
 const Destiny = () => {
     const constraintsRef = useRef(null)
-    const [text, setText] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
     
     const handleClick = () => {
         if (isShaking) return; // ป้องกันการกดซ้ำ
         setIsShaking(true);
+        setIsOpen(true);
 
         setTimeout(() => {
-            setText("hello");
             setIsShaking(false);
-        }, 500); // จบ animation แล้วเปลี่ยนข้อความ
+        }, 500); // จบ animation
     };
 
     return (
@@ -23,7 +24,6 @@ const Destiny = () => {
           <div className="flex flex-col justify-center items-center h-full w-full">
             <h1 className="text-4xl font-bold">เซียมซี</h1>
             <p className="opacity-70 mb-12">อธิษฐานก่อนเขย่า</p>
-            <p>{text}</p>
 
             {/* เซียมซี Zone */}
             <div ref={constraintsRef} className="relative w-44 h-44 md:w-52 md:h-52">
@@ -42,6 +42,11 @@ const Destiny = () => {
                 />
               </motion.button>
             </div>
+
+            {/* แสดง Modal เมื่อ isOpen = true */}
+            <ModalDestiny open={isOpen} setOpen={setIsOpen}>
+                <p className="text-white text-center">ผลเซียมซีของคุณคือ...</p>
+            </ModalDestiny>
           </div>
         </section>
       </div>
