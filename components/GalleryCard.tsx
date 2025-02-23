@@ -1,34 +1,40 @@
 "use client";
 
-import { easeInOut, motion } from "motion/react";
-
-const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-}
+import { Suspense, useState } from "react";
+import Image from "next/image";
+import clsx from "clsx";
 
 interface GalleryCardProps {
-    img: string,
+  img: string;
 }
 
-const GalleryCard = ({ img }: GalleryCardProps ) => {
+const GalleryCard = ({ img }: GalleryCardProps) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <motion.img
-        src={img}
-        className="w-full object-fill rounded-lg shadow-md"
-        whileHover={{ scale: 1.05 }}
-        variants={variants}
-        initial="hidden"
-        animate="visible"
-        transition={{
-            ease: easeInOut,
-            duration: 0.3,
-        }}
-        viewport={{ amount: 0 }}
-    >
-      
-    </motion.img>
-  )
-}
+    <div className="relative w-full overflow-hidden rounded-lg shadow-md">
+      {/* Skeleton Loader */}
+      {!loaded && (
+        <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-lg"></div>
+      )}
 
-export default GalleryCard
+      <Suspense fallback={<div className="w-full h-48 bg-gray-300 animate-pulse"></div>}>
+        <Image
+          src={img}
+          alt="Gallery Image"
+          width={500}
+          height={300}
+          className={clsx(
+            "w-full object-cover rounded-lg transition-opacity duration-500",
+            loaded ? "opacity-100" : "opacity-0"
+          )}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+          priority={false} // Lazy loading
+        />
+      </Suspense>
+    </div>
+  );
+};
+
+export default GalleryCard;
