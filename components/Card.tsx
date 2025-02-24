@@ -10,10 +10,11 @@ interface GalleryCardProps {
   img: string;
   title: string;
   detail: string;
+  rate?: string;
   path: string;
 }
 
-const Card = ({ img, title, detail, path }: GalleryCardProps) => {
+const Card = ({ img, title, detail, rate, path }: GalleryCardProps) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -40,6 +41,13 @@ const Card = ({ img, title, detail, path }: GalleryCardProps) => {
             onLoad={() => setLoaded(true)}
             onError={() => setLoaded(true)}
           />
+
+          {rate && (
+            <div className="absolute right-1 top-1 bg-amber-300 rounded-full p-1.5 text-sm">
+              {rate}
+            </div>
+          )}
+
         </div>
 
         {/* Title & Detail */}
