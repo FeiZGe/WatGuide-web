@@ -1,6 +1,6 @@
 "use client";
 import ModalDestiny from "@/components/ModalDestiny";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 const Destiny = () => {
@@ -10,9 +10,9 @@ const Destiny = () => {
   const [selectedCard, setSelectedCard] = useState<{ id: number; description: string } | null>(null);
 
   const handleClick = () => {
-    if (isShaking) return; // ป้องกันการกดซ้ำ
+    if (isShaking) return;
     setIsShaking(true);
-    
+
     // สุ่มข้อมูลจาก cardData
     const randomCard = cardData[Math.floor(Math.random() * cardData.length)];
     setSelectedCard(randomCard);
@@ -20,32 +20,46 @@ const Destiny = () => {
 
     setTimeout(() => {
       setIsShaking(false);
-    }, 500); // จบ animation
+    }, 500);
   };
 
   return (
-    <div className="bg-red-300 h-dvh flex flex-col items-center justify-center">
+    <div className="bg-amber-200 h-dvh flex flex-col items-center justify-center">
+      
       <section className="px-8 max-w-xl mx-auto h-4/5 w-full">
         <div className="flex flex-col justify-center items-center h-full w-full">
           <h1 className="text-4xl font-bold">เซียมซี</h1>
           <p className="opacity-70 mb-12">อธิษฐานก่อนเขย่า</p>
 
           {/* เซียมซี Zone */}
-          <div
-            ref={constraintsRef}
-            className="relative w-44 h-44 md:w-52 md:h-52"
-          >
+          <div ref={constraintsRef} className="relative w-44 h-44 md:w-52 md:h-52 flex justify-center items-center">
+            
+            {/* 🔥 Motion Background (หมุน) */}
+            <motion.div
+              className="absolute w-56 h-56 bg-white border-5 rounded-lg shadow-lg"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+            />
+
+            <motion.div
+              className="absolute w-48 h-48 bg-amber-100 rounded-lg shadow-lg"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+            />
+            
+
+            {/* ปุ่มเซียมซี */}
             <motion.button
               onClick={handleClick}
-              className="w-full h-full bg-slate-200 rounded-full flex flex-col justify-center items-center"
+              className="w-full h-full rounded-lg flex flex-col justify-center items-center relative"
             >
               <motion.img
                 drag
                 dragConstraints={constraintsRef}
                 className="w-32 h-32"
-                src="/image/destiny/cup.png"
+                src="/image/destiny/cup2.png"
                 alt="เซียมซี"
-                animate={isShaking ? { x: [0, -10, 10, -10, 10, 0] } : {}}
+                animate={isShaking ? { x: [0, -10, 10, -10, 10, 0] } : {} }
                 transition={{ duration: 0.5 }}
               />
             </motion.button>
@@ -56,12 +70,13 @@ const Destiny = () => {
             {selectedCard && (
                 <>
                     <h2 className="text-slate-200 text-3xl text-center mb-4">เซียมซีใบที่ {selectedCard.id}</h2>
-                    <p className="text-slate-300 px-6 mx-auto max-w-lg text-pretty indent-8">{selectedCard.description}</p>
+                    <p className="text-slate-300 px-6 mx-auto text-lg max-w-lg text-pretty indent-8">{selectedCard.description}</p>
                 </>
             )}
           </ModalDestiny>
         </div>
       </section>
+      
     </div>
   );
 };
