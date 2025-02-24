@@ -7,8 +7,8 @@ const Restaurant = () => {
       {restaurants.map((num) => (
         <Card 
           key={num.id} 
-          img="/image/test.png" 
-          path={`/map/hotel/${num.id}`} 
+          img={`/image/res/${num.id}.jpg`}
+          path={`/map/restaurant/${num.id}`} 
           title={num.name} 
           detail={num.typefood}
           rate={num.rating} />
