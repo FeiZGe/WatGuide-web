@@ -11,7 +11,7 @@ export default function Home() {
         {/* ภาพพื้นหลัง */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/image/test.png"
+            src="/image/hero.jpg"
             sizes="100vw"
             style={{
               objectFit: 'cover',
@@ -42,6 +42,15 @@ export default function Home() {
           <HomeGallery img="/image/gallery/2.jpg" />
           <HomeGallery img="/image/gallery/3.jpg" text="40+ รูปภาพ" />
         </div>
+        
+
+        <p className="text-3xl font-semibold mt-4">วิดีโอแนะนำ</p>
+        <video 
+          className="w-full aspect-3/2 object-cover mt-2 rounded-lg"
+          src="/image/gallery/video.mp4"
+          controls>
+            ไม่รองรับ video
+        </video>
         
       </section>
 
