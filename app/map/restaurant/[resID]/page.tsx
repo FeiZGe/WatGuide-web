@@ -1,11 +1,14 @@
-import React from 'react'
+"use client";
 
-const Restaurant = () => {
+import { useParams } from "next/navigation";
+
+const RestaurantItem = () => {
+  const params = useParams()
   return (
     <div>
-      Restaurant
+      Restaurant ID: {params.resID}
     </div>
   )
 }
 
-export default Restaurant
+export default RestaurantItem
