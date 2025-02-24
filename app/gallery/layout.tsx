@@ -17,9 +17,9 @@ export default function GalleryLayout({
                 <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
                     <Link
                         href="/"
-                        className="w-6 h-6 bg-slate-200/80 rounded-md flex justify-center items-center"
+                        className="w-8 h-8 bg-slate-200/80 rounded-md flex justify-center items-center"
                     >
-                        <FontAwesomeIcon icon={faChevronLeft} className="w-4 h-4 text-slate-400/80" />
+                        <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5 text-slate-400/80" />
                     </Link>
                 </motion.div>
                 <h1 className="font-bold text-3xl text-textb flex-1 text-center">แกลลอรี่</h1>
