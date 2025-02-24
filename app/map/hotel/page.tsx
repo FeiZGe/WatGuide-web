@@ -7,7 +7,7 @@ const Hotel = () => {
       {hotels.map((num) => (
         <Card 
           key={num.id} 
-          img="/image/test.png" 
+          img={`/image/hotel/${num.id}.jpg`}
           path={`/map/hotel/${num.id}`} 
           title={num.name_th} 
           detail={num.price}
