@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WatGuide  
 
-## Getting Started
+WatGuide เป็น Web App ที่ให้ข้อมูลเกี่ยวกับ **วัดพระปฐมเจดีย์ราชวรมหาวิหาร** พัฒนาโดยใช้ **Next.js** และรองรับ **Progressive Web App (PWA)** เพื่อให้สามารถติดตั้งและใช้งานบนสมาร์ทโฟนได้  
 
-First, run the development server:
+### คุณสมบัติ  
+- ให้ข้อมูลเกี่ยวกับประวัติความเป็นมาและจุดสำคัญของวัด  
+- รองรับ PWA สามารถติดตั้งเป็นแอปพลิเคชันบนมือถือ   
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### เป้าหมาย  
+โปรเจกต์นี้เป็น **Mini Project** สำหรับงานในชั้นเรียน โดยมีเป้าหมายเพื่อให้ผู้ใช้สามารถเข้าถึงข้อมูลเกี่ยวกับวัดพระปฐมเจดีย์ได้สะดวกขึ้น พร้อมประสบการณ์การใช้งานที่คล้ายกับแอปพลิเคชันบนมือถือ  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### วิธีติดตั้งและใช้งาน  
+1. Clone โปรเจกต์นี้ไปยังเครื่องของคุณ  
+   ```bash
+   git clone https://github.com/FeiZGe/WatGuide-web.git
+   ```  
+2. ติดตั้ง dependencies  
+   ```bash
+   npm install
+   ```  
+3. เริ่มเซิร์ฟเวอร์สำหรับการพัฒนา  
+   ```bash
+   npm run dev
+   ```  
+4. เปิด http://localhost:3000 ด้วยเบราว์เซอร์ของคุณเพื่อดูผลลัพธ์
+5. หากต้องการติดตั้งเป็น PWA บนมือถือ 
+   - **Android** ให้เปิดเว็บไซต์ผ่านเบราว์เซอร์ แล้วกด "เพิ่มไปยังหน้าจอหลัก"  
+  ![Android1](/guide/android1.jpg)
+  ![Android2](/guide/android2.jpg)
+  ![Android3](/guide/android3.jpg)
+   - **Ios** ให้เปิดเว็บไซต์ผ่านเบราว์เซอร์ แล้วกดปุ่ม Share จากนั้นกด "เพิ่มไปยังหน้าจอโฮม" 
+  ![Ios1](/guide/ios1.jpg)
+  ![Ios2](/guide/ios2.jpg)
+  ![Ios3](/guide/ios3.jpg) 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### เทคโนโลยีที่ใช้  
+- **Next.js**: สำหรับพัฒนาเว็บแอป  
+- **TailwindCSS**: สำหรับออกแบบ UI ที่สวยงาม  
+- **PWA**: เพื่อให้สามารถติดตั้งและใช้งานบน SmartPhone ได้
